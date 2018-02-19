@@ -1,0 +1,7 @@
+<h1>Toutes les fermes</h1>
+
+<ul> <% @farms.each do |farm| %>
+  <li> <%= link_to farm.name, farm_path(farm) %> </li>
+  <% end %>
+
+</ul>
