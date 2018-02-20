@@ -1,15 +1,34 @@
-<h1>La ferme</h1>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+  <div class="banner-content">
+    <h1><%= @farm.name %></h1>
+    <p><%= @farm.address %></p>
+    <%= image_tag "cecile.png", class: "big-avatar-circle" %>
+  </div>
+</div>
 
+<div class="wrapper-gray">
+  <div class="container">
+    <div class="row">
+      <div class ="col-xs-6">
+        <div class="description">
+          <h2>La ferme</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Contactez nous: <%= @farm.user.email %></p>
+        </div>
+      </div>
+      <div class ="col-xs-6">
+        <div class="reservation">
+          <h2>Réservations</h2>
+          <p>Dates:</p>
+          <p>Nombre de personnes:</p>
+          <br>
+          <a href="#" class="button-very-green">Réserver</a>
+        </div>
+      </div>
+    </div>
+    <%= link_to "Go back to farms", farms_path  %> |
+    <%= link_to "Edit farm", edit_farm_path(@farm)  %> |
+    <%= link_to "Delete farm", farm_path(@farm), method: :delete  %>
+  </div>
+</div>
 
-<ul>
-  <li><%= @farm.name %></li>
-  <li><%= @farm.address %></li>
-  <li><%= @farm.user.email %></li>
-</ul>
-
-<%= link_to "Go back to farms", farms_path  %>
-<%= link_to "Edit farm", edit_farm_path(@farm)  %>
-<%= link_to "Delete farm", farm_path(@farm), method: :delete  %>
-
-<p>Hello</p>
-<p>Hello2</p>
