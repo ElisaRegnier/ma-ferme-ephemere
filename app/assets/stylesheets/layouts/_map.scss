@@ -1,0 +1,18 @@
+.map-layout {
+  display: flex;
+  align-items: stretch;
+}
+
+@media (max-width: 640px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+#map {
+  width: 500px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0px !important;
+  border-radius: 4px;
+}

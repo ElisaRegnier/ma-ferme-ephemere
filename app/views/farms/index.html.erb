@@ -1,5 +1,3 @@
-<h1>Toutes les fermes</h1>
-
 <ul> <% @farms.each do |farm| %>
   <li> <%= link_to farm.name, farm_path(farm) %> </li>
   <% end %>
@@ -8,3 +6,55 @@
 <% if policy(Farm).create? %>
   <%= link_to "Add farm", new_farm_path %>
 <% end %>
+
+
+
+<!-- Layout code for grid + map -->
+<div class="map-layout">
+  <div class="cards-container">
+    <div class="row">
+      <% @farms.each do |farm| %>
+        <div class="col-xs-12 col-sm-6">
+          <div class="card-farm">
+            <div class="card-photo" style="background-image: linear-gradient(rgba(175,249,201,0.2), rgba(47,91,113,0.8)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+              <div class="card-infos">
+                <h1><%= farm.name %></h1>
+                <p>Normandie, Calvados (14)</p>
+              </div>
+              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+              <a class="card-link" href="#" ></a>
+            </div>
+            <div class="card-bottom">
+              <p>Située au milieu des bocages Normands, Roger est prêt à vous recevoir quand vous le souhaitez</p>
+              <div class="card-bottom-picto">
+                <p>Categories</p>
+                <p>
+                 <i class="far fa-star"></i>
+                 <i class="far fa-star"></i>
+                 <i class="far fa-star"></i>
+                 <i class="far fa-star"></i>
+                 <i class="far fa-star"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="map-container hidden-mobile">
+    <div id="map"></div>
+  </div>
+</div>
+
+
+
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 47.061096, lng: 2.339462},
+      zoom: 6
+    });
+  }
+</script>

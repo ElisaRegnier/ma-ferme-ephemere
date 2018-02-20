@@ -8,6 +8,8 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAReZlJathdJx304-fesAWPacs2QHamY94&libraries=places&callback=initMap" async defer>
+    </script><!-- JS link to import Gmap in the farms index view -->
   </head>
   <body>
     <%= render 'shared/navbar_home' %>
