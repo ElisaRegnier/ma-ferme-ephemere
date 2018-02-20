@@ -7,15 +7,15 @@
           <%= f.input :password, required: false %>
 
         </div>
+        <%= render "devise/shared/links" %>
         <div class="rem-et-log-in">
           <div class="remember-me">
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
           <div class="form-actions">
-            <%= f.button :submit, "Log in", class: "button-very-green" %>
+            <%= f.button :submit, "S'inscrire", class: "button-very-green" %>
           </div>
         </div>
-        <%= render "devise/shared/links" %>
       </div>
     <% end %>
     </div>
