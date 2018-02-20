@@ -20,8 +20,8 @@
 .white-to-green-button {
   color: $green;
   border-radius: 25px;
-  border: 1px solid $green;
-  padding: 10px 15px;
+  border: 1px solid;
+  padding: 10px 30px;
   background-color: white;
 }
 
@@ -30,6 +30,8 @@
   color: white;
   background-color: $green;
   font-weight: bold;
+  opacity: 0.9;
+  border: 0.5px solid;
 }
 
 .button-very-green {

@@ -1,0 +1,30 @@
+.card-farm {
+  height: 100px;
+  margin-top: 50px;
+  padding: 10px;
+  border-color: black;
+  position: relative;
+  display: align;
+  background-color: black;
+}
+
+.farm-image {
+  background-size: cover !important;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+}
+
+
+.card-content {
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  h1 {
+    font-size: 6px;
+
+  }
+  p {
+
+  }
+}
