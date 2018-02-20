@@ -1,0 +1,9 @@
+<h1>Bookings</h1>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= link_to booking.farm.name, booking_path(booking) %>
+    </li>
+  <% end %>
+</ul>
+

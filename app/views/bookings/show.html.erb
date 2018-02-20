@@ -2,5 +2,9 @@
 
 <p>Statut: <%= @booking.accepted %></p>
 
-<%= link_to "Accepter", booking_path(@booking), method: :patch, accepted: "Accepté" %>
-<%= link_to "Refuser", booking_path(@booking), method: :patch, accepted: "Refusé" %>
+<% if @booking.accepted == "En attente" %>
+  <%= link_to "Accepter", accept_path(@booking) %>
+  <%= link_to "Refuser", decline_path(@booking) %>
+<% end %>
+
+<%= link_to "Annuler la réservation", booking_path(@booking), method: :delete %>

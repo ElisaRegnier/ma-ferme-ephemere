@@ -2,6 +2,7 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 
 <%= link_to "Farms", farms_path %>
+<%= link_to "Bookings", bookings_path %>
 <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
 
 <% if !user_signed_in? %>

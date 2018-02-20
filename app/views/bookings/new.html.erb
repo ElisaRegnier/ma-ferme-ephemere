@@ -1,2 +1,8 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<h1>Book this farm</h1>
+
+<%= simple_form_for [@farm, @booking] do |f| %>
+  <%= f.input :start_time %>
+  <%= f.input :end_time %>
+  <%= f.input :number_of_people %>
+  <%= f.button :submit %>
+<% end %>
