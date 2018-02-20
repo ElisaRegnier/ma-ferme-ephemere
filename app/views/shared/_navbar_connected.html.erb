@@ -5,7 +5,14 @@
     <%= link_to "Mes réservations", new_user_session_path, class: "navbar-menu-item"  %>
     <%= link_to "Messages", new_user_session_path, class: "navbar-menu-item"  %>
     <div class="navbar-menu-item">
-      <%= link_to "Messages", new_user_registration_path, class: "button-very-green" %>
+      <div class="dropdown">
+        <%= image_tag("cecile.png", class: "avatar dropdown-toggle small-avatar-circle", data: {toggle: "dropdown"}, id: "navbar-wagon-menu") %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-dropdown-menu">
+          <li><%= link_to "Toutes mes réservations", farms_path,  class: "navbar-menu-item"  %></li>
+          <li><%= link_to "Modifier le profil", user_session_path,  class: "navbar-menu-item"  %></li>
+          <li><%= link_to "Se déconnecter", destroy_user_session_path, method: "delete", class: "navbar-menu-item"  %></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
