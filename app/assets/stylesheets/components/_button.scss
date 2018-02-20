@@ -18,11 +18,10 @@
 
 
 .white-to-green-button {
-  color: $green;
-  border-radius: 25px;
-  border: 1px solid;
-  padding: 10px 30px;
-  background-color: white;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 90px;
+  background-color: $green;
 }
 
 .white-to-green-button:hover {
