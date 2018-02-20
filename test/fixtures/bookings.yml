@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  farm: one
+  accepted: false
+  number_of_people: 1
+  start_time: 2018-02-19
+  end_time: 2018-02-19
+
+two:
+  user: two
+  farm: two
+  accepted: false
+  number_of_people: 1
+  start_time: 2018-02-19
+  end_time: 2018-02-19
