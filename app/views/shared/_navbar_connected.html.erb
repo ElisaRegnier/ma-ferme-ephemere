@@ -1,0 +1,12 @@
+<div class="navbar">
+  <a href="/"><img src="#" alt=""></a>
+  <div class="navbar-menu">
+    <%= link_to "AJouter une ferme", new_farm_path, class: "navbar-menu-item" %>
+    <%= link_to "Mes réservations", new_user_session_path, class: "navbar-menu-item"  %>
+    <% if !user_signed_in? %>
+    <div class="navbar-menu-item">
+      <%= link_to "Messages", new_user_registration_path, class: "button-very-green" %>
+    </div>
+    <% end %>
+  </div>
+</div>
