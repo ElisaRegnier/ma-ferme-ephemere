@@ -1,0 +1,25 @@
+.wrapper-gray {
+  background-color: $light-gray;
+}
+.banner-content {
+  h1 {
+  margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 30px;
+  }
+}
+.container {
+  background-color: white;
+  color: $gray;
+  margin: 0 auto;
+}
+.row {
+  justify-content: space-around;
+}
+.description {
+  text-align: justify;
+}
+.reservation {
+  margin-left: 100px;
+}
