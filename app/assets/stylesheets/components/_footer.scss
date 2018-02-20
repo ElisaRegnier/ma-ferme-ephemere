@@ -1,9 +1,9 @@
 .footer {
-  height: 18vh;
+  height: 15vh;
   background: $green;
   display: flex;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-between;
   padding: 10px 50px;
   color: rgba(0,0,0,0.3);
 }
@@ -30,9 +30,13 @@
 
 }
 
+.footer-bottom > a {
+  transition: all 0.3s ease;
+}
+
 
 .footer-bottom > a:hover {
-  color: white;
+  color: lightgray;
 }
 
 .footer p {
