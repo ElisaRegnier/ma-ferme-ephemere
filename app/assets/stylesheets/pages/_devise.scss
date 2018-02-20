@@ -1,0 +1,21 @@
+.container-padded {
+  padding-left: 500px;
+  padding-right: 500px;
+}
+
+.form-inputs {
+  color: $green;
+  label {
+    font-weight: lighter;
+    color: $gray;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+.rem-et-log-in {
+  padding-top: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
