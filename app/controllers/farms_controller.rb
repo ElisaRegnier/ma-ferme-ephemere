@@ -26,6 +26,7 @@ class FarmsController < ApplicationController
   end
 
   def update
+    @farm = Farm.find(params[:id])
     @farm.update(farms_params)
     redirect_to farm_path(@farm)
   end
@@ -33,6 +34,7 @@ class FarmsController < ApplicationController
   def destroy
     @farm = Farm.find(params[:id])
     @farm.destroy
+    redirect_to farms_path
   end
 
   private
