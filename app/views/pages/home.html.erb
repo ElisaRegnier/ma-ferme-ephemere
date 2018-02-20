@@ -1,5 +1,71 @@
-<h1>Pages#home</h1>
+<!-- <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<a href="#" class="button-light-green">Sign in</a>
+<br>
+<br>
+<br>
+<a href="#" class="button-green">Sign in</a>
+<br>
+<br>
+<br>
+<a href="#" class="button-very-green">Sign in</a>
+
+ -->
+<!--  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.4) 50%), url('https://images.unsplash.com/photo-1455348734739-11d7726c3c80?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=788e1f8cb2f36883bba6b2ad79ba6dca&auto=format&fit=crop&w=1267&q=80');">
+  <div class="banner-content">
+    <h1>Expérimentez la vie à la ferme !</h1>
+    <a href="#" class="white-to-green-button btn-lg">Découvrir</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card-farm">
+          <img src="https://images.unsplash.com/photo-1455348734739-11d7726c3c80?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=788e1f8cb2f36883bba6b2ad79ba6dca&auto=format&fit=crop&w=1267&q=80" class="farm-image" alt="">
+          <img src="" alt="" class="card-avatar">
+          <div class="card-top-content">
+            <h1>Ferme de Roger</h1>
+            <p>Ma ferme à moi</p>
+          </div>
+        <div class="card-bottom">
+          <p>description of the farm</p>
+          <div class="card-bottom-picto">
+            <p>Categories</p>
+            <p>Stars</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card-farm">
+
+      </div>
+      <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-infos">
+          <h1>Ferme de Roger</h1>
+          <p>Normandie, Calvados (14)</p>
+        </div>
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <a class="card-link" href="#" ></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- insert <div class="card"> -->
+    </div>
+  </div>
+</div>
 
 <%= link_to "Farms", farms_path %>
 <%= link_to "Log out", destroy_user_session_path, method: :delete  %>
@@ -7,3 +73,4 @@
 <% if !user_signed_in? %>
   <%= link_to "Sign in", new_user_session_path %>
 <% end %>
+
