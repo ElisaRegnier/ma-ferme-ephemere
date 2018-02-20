@@ -1,0 +1,10 @@
+<h1>Booking</h1>
+
+<p>Statut: <%= @booking.accepted %></p>
+
+<% if @booking.accepted == "En attente" %>
+  <%= link_to "Accepter", accept_path(@booking) %>
+  <%= link_to "Refuser", decline_path(@booking) %>
+<% end %>
+
+<%= link_to "Annuler la réservation", booking_path(@booking), method: :delete %>
