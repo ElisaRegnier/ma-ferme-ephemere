@@ -1,6 +1,20 @@
 Rails.application.routes.draw do
+  get 'bookings/create'
+
+  get 'bookings/new'
+
+  get 'bookings/edit'
+
+  get 'bookings/show'
+
+  get 'bookings/update'
+
+  get 'bookings/destroy'
+
   devise_for :users
   root to: 'pages#home'
-  resources :farms
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :farms do
+    resources :bookings, only: [ :new, :create ]
+  end
+  resources :bookings, only: [ :show, :edit, :update, :destroy ]
 end

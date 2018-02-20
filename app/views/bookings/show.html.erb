@@ -1,0 +1,6 @@
+<h1>Booking</h1>
+
+<p>Statut: <%= @booking.accepted %></p>
+
+<%= link_to "Accepter", booking_path(@booking), method: :patch, accepted: "Accepté" %>
+<%= link_to "Refuser", booking_path(@booking), method: :patch, accepted: "Refusé" %>
