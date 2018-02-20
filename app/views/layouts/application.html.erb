@@ -10,12 +10,20 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar_connected' %>
-    <%= render 'shared/navbar_home' %>
+    <% if user_signed_in? && current_page?('/') %>
+      <%= render 'shared/navbar_connected' %>
+    <% elsif current_page?('/') %>
+      <%= render 'shared/navbar_home' %>
+    <% elsif !user_signed_in? %>
+      <%= render 'shared/navbar_not_connected' %>
+    <% else user_signed_in? %>
+      <%= render 'shared/navbar_connected' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= render 'shared/footer' %>
+
   </body>
 </html>
