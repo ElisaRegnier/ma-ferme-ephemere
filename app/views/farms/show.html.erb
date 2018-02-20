@@ -7,5 +7,11 @@
 </ul>
 
 <%= link_to "Go back to farms", farms_path  %>
-<%= link_to "Edit farm", edit_farm_path(@farm)  %>
-<%= link_to "Delete farm", farm_path(@farm), method: :delete  %>
+
+<% if policy(@farm).update? %>
+<%= link_to 'Edit', edit_farm_path(@farm) %>
+<% end %>
+
+<% if policy(@farm).destroy? %>
+<%= link_to 'Delete', @farm, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
