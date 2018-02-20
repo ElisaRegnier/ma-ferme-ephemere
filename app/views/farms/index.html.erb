@@ -3,7 +3,8 @@
 <ul> <% @farms.each do |farm| %>
   <li> <%= link_to farm.name, farm_path(farm) %> </li>
   <% end %>
-
 </ul>
 
-<%= link_to "Add a new farm", new_farm_path %>
+<% if policy(Farm).create? %>
+  <%= link_to "Add farm", new_farm_path %>
+<% end %>
