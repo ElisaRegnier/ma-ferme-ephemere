@@ -3,5 +3,7 @@
 <ul>
   <li><%= @farm.name %></li>
   <li><%= @farm.address %></li>
-  <li><%= @farm.size %></li>
+  <li><%= @farm.user.email %></li>
 </ul>
+
+<%= link_to "Go back to farms", farms_path  %>

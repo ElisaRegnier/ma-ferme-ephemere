@@ -13,6 +13,7 @@ class FarmsController < ApplicationController
 
   def create
     @farm = Farm.new(farms_params)
+    @farm.user = current_user
     if @farm.save
       redirect_to farm_path(@farm)
     else
