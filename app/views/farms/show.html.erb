@@ -1,0 +1,11 @@
+<h1>La ferme</h1>
+
+<ul>
+  <li><%= @farm.name %></li>
+  <li><%= @farm.address %></li>
+  <li><%= @farm.user.email %></li>
+</ul>
+
+<%= link_to "Go back to farms", farms_path  %>
+<%= link_to "Edit farm", edit_farm_path(@farm)  %>
+<%= link_to "Delete farm", farm_path(@farm), method: :delete  %>
