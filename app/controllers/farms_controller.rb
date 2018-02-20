@@ -1,19 +1,26 @@
 class FarmsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: :show
+
   def index
-    @farms = Farm.all
+    @farms = policy_scope(Farm).order(created_at: :desc)
+    authorize @farms
   end
 
   def show
     @farm = Farm.find(params[:id])
+    authorize @farm
   end
 
   def new
     @farm = Farm.new
+    authorize @farm
   end
 
   def create
     @farm = Farm.new(farms_params)
     @farm.user = current_user
+    authorize @farm
     if @farm.save
       redirect_to farm_path(@farm)
     else
@@ -23,16 +30,19 @@ class FarmsController < ApplicationController
 
   def edit
     @farm = Farm.find(params[:id])
+    authorize @farm
   end
 
   def update
     @farm = Farm.find(params[:id])
     @farm.update(farms_params)
+    authorize @farm
     redirect_to farm_path(@farm)
   end
 
   def destroy
     @farm = Farm.find(params[:id])
+    authorize @farm
     @farm.destroy
     redirect_to farms_path
   end
