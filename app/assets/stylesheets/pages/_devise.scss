@@ -1,6 +1,11 @@
-.container-padded {
-  padding-left: 500px;
-  padding-right: 500px;
+// .container-padded {
+//   padding: 50px 500px;
+// }
+
+.form-content {
+  padding: 30px 100px;
+  border: 1px solid $light-gray;
+  margin-bottom: 30px;
 }
 
 .form-inputs {
@@ -13,9 +18,14 @@
   }
 }
 
-.rem-et-log-in {
-  padding-top: 10px;
+.connect-field {
   display: flex;
+  flex-direction: column;
   text-align: center;
-  justify-content: space-between;
+}
+
+.links {
+  padding-top: 30px;
+  text-align: center;
+  justify-content: space-around;
 }
