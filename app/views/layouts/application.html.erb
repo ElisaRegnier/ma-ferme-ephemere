@@ -10,9 +10,15 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar_home' %>
-    <%= render 'shared/navbar_not_connected' %>
-    <%= render 'shared/navbar_connected' %>
+    <% if user_signed_in? && current_page?('/') %>
+      <%= render 'shared/navbar_connected' %>
+    <% elsif current_page?('/') %>
+      <%= render 'shared/navbar_home' %>
+    <% elsif !user_signed_in? %>
+      <%= render 'shared/navbar_not_connected' %>
+    <% else user_signed_in? %>
+      <%= render 'shared/navbar_connected' %>
+    <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>
@@ -20,7 +26,5 @@
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_pack_tag 'map' %>
-
-
   </body>
 </html>

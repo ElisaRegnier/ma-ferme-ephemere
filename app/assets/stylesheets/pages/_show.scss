@@ -1,25 +1,54 @@
-.wrapper-show-gray {
-  background-color: $light-gray;
-}
 .banner-show-content {
+  color: white;
+  text-align: center;
+  // height: calc(60vh - 30px);
+  // background-size: cover !important;
+  // background-position: center;
+  padding: 50px;
   h1 {
-  margin-bottom: 0;
+    margin-bottom: 0;
+    font-size: 50px;
+    text-shadow: 0px 1px rgb(0, 0, 0);
   }
   p {
     margin-bottom: 30px;
   }
 }
-.container-show {
-  background-color: white;
-  color: $gray;
-  margin: 0 auto;
+
+.show-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 200px;
 }
-.row-show {
-  justify-content: space-around;
-}
+
 .description {
-  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  text-align: center;
 }
+
+.title-description {
+  text-align: center;
+  h2 {
+    font-size: 28px;
+  }
+}
+
+.show-description {
+  padding-top: 20px;
+  p {
+    font-size: 16px;
+  }
+}
+
 .reservation {
-  margin-left: 100px;
+  width: 20%;
+  margin-top: 130px;
+}
+
+.contact {
+  font-weight: bold;
+  border-top: 1px solid $green;
+  padding-top: 20px;
 }

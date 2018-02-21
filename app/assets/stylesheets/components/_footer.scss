@@ -1,33 +1,45 @@
 .footer {
+  height: 15vh;
   background: $green;
   display: flex;
   align-items: center;
-  flex-direction: column;
-  height: 100px;
-  padding: 0px 50px;
+  justify-content: space-between;
+  padding: 10px 50px;
   color: rgba(0,0,0,0.3);
 }
 
 .footer-copyright {
   color: white;
-  border-top: 1px solid white;
-  margin-top: 20px;
-  padding-top: 15px;
+  // border-top: 1px solid white;
+
 }
 
 .footer .fa-heart {
   color: #D23333;
 }
 
-.footer-bottom {
-  display: flex;
-  // text-align: center;
-  justify-content: space-between;
-  color: white;
+.footer-bottom > a {
+  // display: flex;
+  // // text-align: center;
+  // justify-content: space-between;
+  color: green;
+  background-color: $green;
+  padding: 0px 10px;
+  font-size: 20px;
   // padding-left: 200px;
-  width: 100%;
-  p {
-    opacity: 0.6;
-    font-weight: lighter;
-  }
+
+}
+
+.footer-bottom > a {
+  transition: all 0.3s ease;
+}
+
+
+.footer-bottom > a:hover {
+  color: lightgray;
+}
+
+.footer p {
+  margin-bottom: 0px;
+  font-size: 16px;
 }

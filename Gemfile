@@ -10,6 +10,8 @@ gem 'redis'
 gem 'devise'
 gem 'pundit'
 gem 'geocoder'
+gem 'cloudinary'
+gem 'carrierwave'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

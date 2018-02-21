@@ -1,18 +1,37 @@
-<h2>Sign up</h2>
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
+  <div class="container-padded">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="form-content">
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true, input_html: { class: "custom-field" } %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: "custom-field" %>
+            <%= f.input :name, required: true, class: "custom-field" %>
+            <%= f.input :password_confirmation, required: true, style: "custom-field" %>
+          </div>
+
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :name, required: true %>
     <%= f.input :password_confirmation, required: true %>
-  </div>
+    <%= f.input :name, required: true %>
+    <%= f.input :photo, required: true %>
+    <%= f.input :photo_cache, as: :hidden %>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+          <div class="connect-field">
+            <%= f.button :submit, "S'inscrire", class: "button-very-green padding-s-inscrire" %>
+          </div>
+          <div class="links">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
-<%= render "devise/shared/links" %>
+  </div>
+</div>
+
+

@@ -1,12 +1,18 @@
 <div class="navbar">
   <a href="/"><img src="#" alt=""></a>
   <div class="navbar-menu">
-    <%= link_to "Fermes Ephémères", farms_path, class: "navbar-menu-item" %>
-    <%= link_to "Se connecter", new_user_session_path, class: "navbar-menu-item"  %>
-    <% if user_signed_in? %>
-    <div class="navbar-menu-item">
-      <%= link_to "S'inscrire", new_user_registration_path, class: "button-very-green" %>
+    <div class="fermes-ephemeres">
+      <%= link_to "Fermes Ephémères", farms_path, class: "navbar-menu-item" %>
     </div>
-    <% end %>
+    <div class="se-connecter">
+      <%= link_to "Se connecter", new_user_session_path, class: "navbar-menu-item"  %>
+    </div>
+    <div class="s-inscire">
+      <% if !user_signed_in? %>
+      <div class="navbar-menu-item">
+        <%= link_to "S'inscrire", new_user_registration_path, class: "button-very-green" %>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>

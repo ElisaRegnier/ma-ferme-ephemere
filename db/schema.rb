@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20180221110510) do
     t.float "longitude"
     t.float "zip_code"
     t.string "city"
+    t.string "photo"
     t.index ["user_id"], name: "index_farms_on_user_id"
   end
 
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20180221110510) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.boolean "admin"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

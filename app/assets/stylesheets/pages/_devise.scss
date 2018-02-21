@@ -1,6 +1,12 @@
-.container-padded {
-  padding-left: 500px;
-  padding-right: 500px;
+// .container-padded {
+//   padding: 50px 500px;
+// }
+
+.form-content {
+  padding: 30px 100px;
+  border: 1px solid $light-gray;
+  margin-bottom: 30px;
+  box-shadow: 0px 10px 40px -10px rgba(0, 64, 128, 0.2);
 }
 
 .form-inputs {
@@ -13,9 +19,36 @@
   }
 }
 
-.rem-et-log-in {
-  padding-top: 10px;
+.form-control:focus {
+  border-color: $green;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin: 6px 0 0;
+}
+
+.custom-field:focus {
+  background-color: none !important;
+  color: $gray !important;
+}
+.connect-field {
   display: flex;
+  flex-direction: column;
   text-align: center;
-  justify-content: space-between;
+}
+
+.links {
+  padding-top: 30px;
+  text-align: center;
+  justify-content: space-around;
+  font-weight: bold;
+}
+
+.custom {
+  display: block;
+  font-weight: bold;
+}
+
+.padding-s-inscrire {
+  margin-top: 20px;
 }
