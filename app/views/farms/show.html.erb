@@ -3,7 +3,9 @@
   <div class="banner-show-content">
     <h1><%= @farm.name %></h1>
     <p><%= @farm.address %></p>
-    <%= image_tag @farm.user.photo, class: "big-avatar-circle" %>
+    <%= link_to profile_path(@farm.user) do %>
+      <%= image_tag @farm.user.photo, class: "big-avatar-circle" %>
+    <% end %>
   </div>
 </div>
 
