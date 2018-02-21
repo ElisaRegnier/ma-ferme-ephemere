@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_one :farm
   has_many :bookings
   has_many :farms, through: :bookings
+
+  mount_uploader :photo, PhotoUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
