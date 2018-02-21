@@ -5,6 +5,15 @@ class FarmsController < ApplicationController
   def index
     @farms = policy_scope(Farm).order(created_at: :desc)
     authorize @farms
+
+    @farms = @farms.where.not(latitude: nil, longitude: nil)
+    @markers = @farms.map do |farm|
+      {
+        lat: farm.latitude,
+        lng: farm.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
@@ -50,6 +59,6 @@ class FarmsController < ApplicationController
   private
 
   def farms_params
-    params.require(:farm).permit(:name, :address, :photo)
+    params.require(:farm).permit(:name, :address, :zip_code, :city, :photo, :description, :ovin, :caprin, :bovin, :size)
   end
 end

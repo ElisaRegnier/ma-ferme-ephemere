@@ -14,16 +14,41 @@
     margin-bottom: 30px;
   }
 }
-.container-show {
-  background-color: white;
-  color: $gray;
+
+.show-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 200px;
 }
-.row-show {
-  justify-content: space-around;
-}
+
 .description {
-  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  text-align: center;
 }
+
+.title-description {
+  text-align: center;
+  h2 {
+    font-size: 28px;
+  }
+}
+
+.show-description {
+  padding-top: 20px;
+  p {
+    font-size: 16px;
+  }
+}
+
 .reservation {
-  margin-left: 100px;
+  width: 20%;
+  margin-top: 130px;
+}
+
+.contact {
+  font-weight: bold;
+  border-top: 1px solid $green;
+  padding-top: 20px;
 }
