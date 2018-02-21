@@ -1,0 +1,9 @@
+<h1><%= @user.name %></h1>
+<%= image_tag @user.photo, class: "big-avatar-circle" %>
+
+<ul> <% @user.farms.each do |farm| %>
+  <% @farm.bookings.each do |booking| %>
+  <li><%= farm.name | booking.accepted %> </li>
+  <% end %>
+  <% end %>
+</ul>
