@@ -1,10 +1,26 @@
 // Specific CSS for your home-page
+.container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  h1 {
+    text-align: center;
+    color: $gray;
+  }
+}
+.row {
+  padding-top: 30px;
+}
 .description {
   color: $gray;
+  .image {
+    text-align: center;
+  }
   h2 {
     font-size: 25px;
+    text-align: center;
   }
   p {
     font-size: 15px;
   }
 }
+
