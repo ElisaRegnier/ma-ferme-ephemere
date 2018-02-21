@@ -11,9 +11,12 @@
   display: flex;
   justify-content: space-around;
   padding-top: 30px;
+  text-align: center;
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
   color: $gray;
   .image {
     text-align: center;
@@ -24,6 +27,9 @@
   }
   p {
     font-size: 15px;
+    text-align: justify;
   }
 }
-
+.fit {
+  object-fit: none;
+}
