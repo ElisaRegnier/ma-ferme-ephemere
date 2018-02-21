@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20180221110510) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "size"
+    t.string "photo"
     t.float "latitude"
     t.float "longitude"
     t.float "zip_code"
     t.string "city"
-    t.string "photo"
     t.index ["user_id"], name: "index_farms_on_user_id"
   end
 
