@@ -1,10 +1,27 @@
-<h1>Booking</h1>
+<h1 style="text-align: center; margin-top: 30px; margin-bottom: 30px;">Mon Booking</h1>
 
-<p>Statut: <%= @booking.accepted %></p>
+<div class="wrapper-booking"></div>
+  <div class="container-padded">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="form-content">
+          <div class="form-inputs" >
+              <h3>Statut de ma réservation</h3>
+            <div class="status">
+              <p><%= @booking.accepted %></p>
+            </div>
+            <div class="cancel-reservation">
+              <%= link_to "Annuler la réservation", booking_path(@booking), method: :delete, class: "button-very-green" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% if @booking.accepted == "En attente" %>
-  <%= link_to "Accepter", accept_path(@booking) %>
-  <%= link_to "Refuser", decline_path(@booking) %>
-<% end %>
 
-<%= link_to "Annuler la réservation", booking_path(@booking), method: :delete %>
+<%# if @booking.accepted == "En attente" %>
+  <%#= link_to "Accepter", accept_path(@booking), class: "status-accepted" %>
+  <%#= link_to "Refuser", decline_path(@booking), class: "status-deleted" %>
+<%#= end %>
