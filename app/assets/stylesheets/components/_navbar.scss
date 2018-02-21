@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: flex-end;
   height: 30px;
-  padding: 10px 30px;
+  padding: 10px 0px;
   margin: 15px;
   transition: all 0.4s ease;
   background: white;
@@ -20,15 +20,38 @@
   margin-right: 50px;
 }
 
+a.navbar-menu-item:hover {
+  border-bottom: 2px solid $green;
+  padding-bottom: 22px;
+}
+
+
+a.navbar-menu-item-dropdown:hover {
+  font-weight: bold;
+}
+
 a {
   color: $green;
-  font-weight: lighter;
+  font-weight: 300;
   &:hover {
     text-decoration: none;
     color: $green;
-    opacity: 0.6;
+    opacity: 0.9;
   }
 }
+
+// .fermes-ephemeres {
+//   height: 100% !important;
+//   vertical-align: middle !important;
+//   box-sizing: border-box;
+//   padding: 30px;
+//   margin: 0px;
+// }
+
+// .fermes-ephemeres:hover {
+//   border: 6px solid black;
+// }
+
 
 .navbar-dropdown-menu {
   margin-top: 15px;
