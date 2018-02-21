@@ -1,43 +1,28 @@
-<ul> <% @farms.each do |farm| %>
-  <li> <%= link_to farm.name, farm_path(farm) %> </li>
-  <% end %>
-</ul>
-
 <% if policy(Farm).create? %>
   <%= link_to "Add farm", new_farm_path %>
 <% end %>
 
-
-
 <!-- Layout code for grid + map -->
+
+
 <div class="map-layout">
   <div class="cards-container">
     <div class="row">
       <% @farms.each do |farm| %>
         <div class="col-xs-12 col-sm-6">
-          <div class="card-farm">
-            <div class="card-photo" style="background-image: linear-gradient(rgba(175,249,201,0.2), rgba(47,91,113,0.8)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-              <div class="card-infos">
-                <h1><%= farm.name %></h1>
-                <p>Normandie, Calvados (14)</p>
-              </div>
-              <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-              <a class="card-link" href="#" ></a>
+          <div class="farm-card">
+            <div class="top-card text-center" style="background-image: linear-gradient(rgba(175,249,201,0.2), rgba(47,91,113,0.8)), url('<%= cl_image_path farm.photo, crop: :fill %>');">
+              <%= image_tag farm.user.photo, crop: :fill, class: "small-avatar-circle" %>
+
+              <h1><%= link_to farm.name, farm_path(farm) %></h1>
+              <p><%= farm.city %></p>
             </div>
-            <div class="card-bottom">
-              <p>Située au milieu des bocages Normands, Roger est prêt à vous recevoir quand vous le souhaitez</p>
-              <div class="card-bottom-picto">
-                <p>Categories</p>
-                <p>
-                 <i class="far fa-star"></i>
-                 <i class="far fa-star"></i>
-                 <i class="far fa-star"></i>
-                 <i class="far fa-star"></i>
-                 <i class="far fa-star"></i>
-                </p>
-              </div>
+            <div class="bottom-card">
+              <p class="text-center"><%= farm.description %></p>
             </div>
           </div>
+
+
         </div>
       <% end %>
     </div>
@@ -47,3 +32,9 @@
     <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
 </div>
+
+
+
+
+
+
