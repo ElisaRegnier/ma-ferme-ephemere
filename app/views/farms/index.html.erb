@@ -1,38 +1,32 @@
-
-
-<!-- Layout code for grid + map -->
-
-
 <div class="map-layout">
   <div class="cards-container">
     <div class="row">
       <% @farms.each do |farm| %>
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-md-6 col-xl-4">
           <div class="farm-card">
-            <div class="top-card text-center" style="background-image: linear-gradient(rgba(175,249,201,0.2), rgba(47,91,113,0.8)), url('<%= cl_image_path farm.photo, crop: :fill %>');">
-              <%= image_tag farm.user.photo, crop: :fill, class: "medium-avatar-circle" %>
-
-              <h1><%= link_to farm.name, farm_path(farm) %></h1>
-              <p><%= farm.city %></p>
+            <div class="top-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('<%= cl_image_path farm.photo, crop: :fill %>');">
+              <div class="hidden-hover">
+                  <h3><%= farm.city %></h3>
+                  <h5>Aquitaine</h5>
+              </div>
+              <div class="card-hover">
+                <p><%= farm.description[0..50] %>...</p>
+              </div>
             </div>
             <div class="bottom-card">
-              <p class="text-center"><%= farm.description %></p>
+              <%= image_tag farm.user.photo, crop: :fill, class: "small-avatar-circle" %>
+              <%= link_to farm.name, farm_path(farm) %>
+              <ul class="list-inline">
+                <li><i class="fa fa-share"></i></li>
+                <li><i class="fa fa-heart"></i></li>
+              </ul>
             </div>
           </div>
-
-
         </div>
       <% end %>
     </div>
   </div>
-
   <div class="map-container hidden-mobile">
     <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
 </div>
-
-
-
-
-
-

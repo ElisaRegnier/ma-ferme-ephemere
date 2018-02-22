@@ -1,9 +1,6 @@
 <div class="navbar">
-  <a href="/"><img src="#" alt=""></a>
+  <a href="/"><%= image_tag "logo2.png", class: "logo" %></a>
   <div class="navbar-menu">
-    <div class="fermes-ephemeres">
-      <%= link_to "Fermes Ephémères", farms_path, class: "navbar-menu-item" %>
-    </div>
     <div class="se-connecter">
       <%= link_to "Se connecter", new_user_session_path, class: "navbar-menu-item"  %>
     </div>

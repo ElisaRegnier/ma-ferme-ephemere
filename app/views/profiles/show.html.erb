@@ -1,3 +1,4 @@
+
 <!-- <h1 style="text-align: center; margin-top: 30px; margin-bottom: 30px;">Toutes mes réservations</h1> -->
 <div class="wrapper">
   <div class="container container-profile">
@@ -49,11 +50,3 @@
     </div>
   </div>
 </div>
-
-
-<ul> <% @user.farms.each do |farm| %>
-  <% @farm.bookings.each do |booking| %>
-  <li><%= farm.name | booking.accepted %> </li>
-  <% end %>
-  <% end %>
-</ul>
