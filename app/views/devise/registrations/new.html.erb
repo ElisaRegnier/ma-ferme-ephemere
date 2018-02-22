@@ -11,6 +11,8 @@
               <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), class: "custom-field" %>
               <%= f.input :password_confirmation, required: true, style: "custom-field" %>
               <%= f.input :name, required: true, class: "custom-field" %>
+              <%= f.input :photo %>
+              <%= f.input :photo_cache, as: :hidden %>
             </div>
             <div class="connect-field">
               <%= f.button :submit, "S'inscrire", class: "button-very-green padding-s-inscrire" %>
@@ -19,8 +21,8 @@
               <%= render "devise/shared/links" %>
             </div>
           </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
