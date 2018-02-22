@@ -10,13 +10,16 @@
 }
 
 #map {
-  width: 500px;
   height: 100vh;
   position: sticky !important;
   top: 0px !important;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .cards-container {
   padding: 0px 28px;
+}
+
+.map-container {
+  flex: 0 0 40%;
 }
