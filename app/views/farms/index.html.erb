@@ -4,41 +4,54 @@
 
 <div class="map-layout", style="margin-top: 100px">
   <div class="cards-container">
-    <script>
-      const userInput = document.getElementById("query");
-      const submitButton = document.getElementById("")
-      userInput.addEventListener("click", (event) => {
+    <%#= form_tag farms_path, method: :get do %>
+      <%#= label_tag "Choisissez votre région" %>
+      <%#= select_tag "query[]", options_for_select(Farm::REGIONS, params[:query]), multiple: true, class: "form-control select2 hello" %>
+      <%#= submit_tag "Valider", class: "edit_button button-very-green", id: "button-submit" %>
+
+      <%#= simple_form_for Farm.new, :url => farms_path, :method => :get do |f| %>
+        <%#= f.input "query[]", collection: Farm::REGIONS, input_html: { multiple: true, class: "form-control select2 hello" } %>
+        <%#= f.submit %>
+    <%# end %>
+    <% if @farms.empty? %>
+      <div class="no-farm">
+        <h1>Essaye encore, aucun résultat!</h1>
         <%= form_tag farms_path, method: :get do %>
           <%= label_tag "Choisissez votre région" %>
-          <%= select_tag :query, options_for_select(Farm::REGIONS, params[:query]), class: "form-control" %>
+          <%= select_tag "query[]", options_for_select(Farm::REGIONS, params[:query]), multiple: true, class: "form-control select2 hello" %>
+          <%= submit_tag "Valider", class: "edit_button button-very-green", id: "button-submit" %>
         <% end %>
-      });
-    </script>
-
-    <div class="row">
-      <% @farms.each do |farm| %>
-        <div class="col-xs-12 col-sm-6">
-          <div class="farm-card">
-            <div class="top-card text-center" style="background-image: linear-gradient(rgba(175,249,201,0.2), rgba(47,91,113,0.8)), url('<%= cl_image_path farm.photo, crop: :fill %>');">
-              <%= image_tag farm.user.photo, crop: :fill, class: "medium-avatar-circle" %>
-
-              <h1><%= link_to farm.name, farm_path(farm) %></h1>
-              <p><%= farm.city %></p>
-            </div>
-            <div class="bottom-card">
-              <p class="text-center"><%= farm.description %></p>
+      </div>
+    <% else %>
+      <div class="row">
+        <%= form_tag farms_path, method: :get do %>
+          <%= label_tag "Choisissez votre région" %>
+          <%= select_tag "query[]", options_for_select(Farm::REGIONS, params[:query]), multiple: true, class: "form-control select2 hello" %>
+          <%= submit_tag "Valider", class: "edit_button button-very-green", id: "button-submit" %>
+        <% end %>
+        <% @farms.each do |farm| %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="farm-card">
+              <div class="top-card text-center" style="background-image: linear-gradient(rgba(175,249,201,0.2), rgba(47,91,113,0.8)), url('<%= cl_image_path farm.photo, crop: :fill %>');">
+                <%= image_tag farm.user.photo, crop: :fill, class: "medium-avatar-circle" %>
+                <h1><%= link_to farm.name, farm_path(farm) %></h1>
+                <p><%= farm.city %></p>
+              </div>
+              <div class="bottom-card">
+                <p class="text-center"><%= farm.description %></p>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <% unless @farms.empty? %>
+    <div class="map-container hidden-mobile">
+      <div id="map" data-markers="<%= @markers.to_json %>"></div>
     </div>
-  </div>
-
-  <div class="map-container hidden-mobile">
-    <div id="map" data-markers="<%= @markers.to_json %>"></div>
-  </div>
+  <% end %>
 </div>
-
 
 
 
