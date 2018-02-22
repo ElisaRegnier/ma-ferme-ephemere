@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 60px;
+  height: $navbar-height;
   transition: all 0.4s ease;
   background-color: white !important;
   top: 0;
@@ -83,4 +83,23 @@ a {
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin-right: 780px;
+}
+
+.logo-2 {
+  width: 70px;
+  height: 70px;
+  margin-right: 620px;
+}
+
+.logo-3 {
+  width: 70px;
+  height: 70px;
+  margin-right: 580px;
 }

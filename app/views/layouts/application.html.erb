@@ -20,7 +20,9 @@
       <%= render 'shared/navbar_connected' %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="page-content">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
