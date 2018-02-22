@@ -1,0 +1,97 @@
+// cards css
+
+.flex-container {
+  display: flex;
+  align-items: stretched;
+  .left-stuff {
+    flex: 0 0 30%;
+    margin-right: 25px;
+  }
+  .right-stuff {
+    flex: 1 1 auto;
+    .description-profile {
+      height: 100%;
+      overflow-y: scroll;
+    }
+  }
+}
+.profile{
+  margin-bottom: 10px;
+}
+
+.container-profile {
+  padding: 30px;
+}
+.card-profile {
+  background: white;
+  padding: 30px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.card-content {
+  text-align: center;
+}
+// message css
+.inbox {
+  padding-left: 10px;
+  padding-top: 10px;
+  list-style: none;
+  border: 1px solid #dce0e0;
+}
+.message {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed #dce0e0;
+}
+.message-name {
+  font-size: 17px;
+  font-weight: lighter;
+  padding-left: 20px;
+}
+h3 {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+p {
+  font-weight: lighter;
+  color: $gray;
+  margin-top: 0;
+}
+.message-body {
+  font-size: 17px;
+  font-weight: lighter;
+  flex-grow: 1;
+  padding-left: 30px;
+}
+.message-status {
+  flex: 0 0 20%;
+  font-size: 17px;
+  font-weight: lighter;
+  margin: 10px;
+  align-items: center;
+}
+// tabs css
+.tabs {
+  display: flex;
+  align-items: center;
+}
+
+.tab {
+  padding: 10px;
+  color: $gray;
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 18px;
+  opacity: 0.8;
+  border-bottom: 5px solid transparent;
+}
+
+.tab:hover {
+  opacity: 1;
+  color: black;
+}
+
+.tab.active {
+  color: $gray;
+  border-bottom: 5px solid $green;
+  font-weight: bold;
+}
