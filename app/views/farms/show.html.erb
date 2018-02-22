@@ -1,40 +1,54 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)),
          url('<%= cl_image_path @farm.photo, crop: :fill %>'); background-size: cover; background-position: center; height: 70vh; ">
-  <div class="banner-show-content">
-    <h1><%= @farm.name %></h1>
-    <p><%= @farm.address %></p>
+  <h1><%= @farm.name %></h1>
+  <p><%= @farm.city %></p>
+</div>
+
+
+
+
+
+
+<div class="map-layout">
+  <div class="farm-info">
     <%= link_to profile_path(@farm.user) do %>
       <%= image_tag @farm.user.photo, class: "big-avatar-circle" %>
     <% end %>
   </div>
-</div>
-
-<div class="show-container">
-  <div class="description">
-    <div class="title-description">
-      <h2><%= @farm.name %></h2>
-    </div>
-    <div class="show-description">
-      <p><%= @farm.description %></p>
-    </div>
-    <div class="contact">
-      <p>Contactez nous: <%= @farm.user.email %></p>
-    </div>
-    <div class="show-links">
-      <%= link_to "Go back to farms", farms_path  %>
-
-      <% if policy(@farm).update? %>
-        <%= link_to 'Edit', edit_farm_path(@farm) %>
-      <% end %>
-
-      <% if policy(@farm).destroy? %>
-        <%= link_to 'Delete', @farm, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
-  </div>
   <div class="reservation">
-    <%= link_to "Réserver", new_farm_booking_path(@farm), class: "button-very-green"%>
   </div>
 </div>
 
 
+
+
+<!--
+
+
+  <div class="show-container">
+    <div class="description">
+      <div class="title-description">
+        <h2><%= @farm.name %></h2>
+      </div>
+      <div class="show-description">
+        <p><%= @farm.description %></p>
+      </div>
+      <div class="contact">
+        <p>Contactez nous: <%= @farm.user.email %></p>
+      </div>
+      <div class="show-links">
+        <%= link_to "Go back to farms", farms_path  %>
+
+        <% if policy(@farm).update? %>
+          <%= link_to 'Edit', edit_farm_path(@farm) %>
+        <% end %>
+
+        <% if policy(@farm).destroy? %>
+          <%= link_to 'Delete', @farm, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    </div>
+    <div class="reservation">
+      <%= link_to "Réserver", new_farm_booking_path(@farm), class: "button-very-green"%>
+    </div>
+  </div> -->
