@@ -14,6 +14,11 @@ class FarmsController < ApplicationController
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
+    if params[:query].present?
+      @farms = Farm.where(title: params[:query])
+    else
+      @farms = Farm.all
+    end
   end
 
   def show
