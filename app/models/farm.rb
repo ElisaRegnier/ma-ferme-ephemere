@@ -4,7 +4,7 @@ class Farm < ApplicationRecord
   has_many :users, through: :bookings, dependent: :destroy
 
   validates :photo, presence: true
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true, length: { in: 6..18 }
   validates :address, presence: true
 
   geocoded_by :address
