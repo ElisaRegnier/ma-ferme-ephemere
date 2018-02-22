@@ -1,7 +1,32 @@
 .banner-show {
   color: white;
-  text-align: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.farm-show-layout {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+}
+
+
+.farm-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.reservation {
+  width: 400px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 
@@ -10,13 +35,23 @@
 
 
 
-// .reservation {
-//   width: 600px;
-//   height: 100vh;
-//   position: sticky !important;
-//   top: 0px !important;
-//   border-radius: 3px;
-// }
+.pres-show-farm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

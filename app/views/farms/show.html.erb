@@ -1,5 +1,5 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)),
-         url('<%= cl_image_path @farm.photo, crop: :fill %>'); background-size: cover; background-position: center; height: 70vh; ">
+         url('<%= cl_image_path @farm.photo, crop: :fill %>'); background-size: cover; background-position: center; height: 55vh; ">
   <h1><%= @farm.name %></h1>
   <p><%= @farm.city %></p>
 </div>
@@ -8,14 +8,31 @@
 
 
 
-
-<div class="map-layout">
+<div class="farm-show-layout">
   <div class="farm-info">
-    <%= link_to profile_path(@farm.user) do %>
-      <%= image_tag @farm.user.photo, class: "big-avatar-circle" %>
-    <% end %>
+    <div class="pres-show-farm">
+      <p>
+        <%= link_to profile_path(@farm.user) do %>
+          <%= image_tag @farm.user.photo, class: "big-avatar-circle" %>
+        <% end %>
+      </p>
+      <p><%= @farm.user.name %></p>
+    </div>
+    <div class="description-farm-show">
+      <p><%= @farm.description %></p>
+    </div>
+    <div>
+      <p>Informations complémentaires :</p>
+      <ul>
+        <li>Superficie de notre ferme : <%= @farm.size %>m2</li>
+        <li>Contactez nous : <%= @farm.user.email %></li>
+      </ul>
+    </div>
   </div>
   <div class="reservation">
+    <div class="reservation">
+      <%= link_to "Réserver", new_farm_booking_path(@farm), class: "button-very-green"%>
+    </div>
   </div>
 </div>
 
