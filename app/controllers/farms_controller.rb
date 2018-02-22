@@ -6,6 +6,8 @@ class FarmsController < ApplicationController
     @farms = policy_scope(Farm).order(created_at: :desc)
     authorize @farms
 
+    @farms = @farms.where(region: params[:query]) if params[:query].present?
+
     @farms = @farms.where.not(latitude: nil, longitude: nil)
     @markers = @farms.map do |farm|
       {
@@ -13,11 +15,6 @@ class FarmsController < ApplicationController
         lng: farm.longitude#,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
-    end
-    if params[:query].present?
-      @farms = Farm.where(title: params[:query])
-    else
-      @farms = Farm.all
     end
   end
 

@@ -2,10 +2,19 @@
 
 <!-- Layout code for grid + map -->
 
-
-
-<div class="map-layout">
+<div class="map-layout", style="margin-top: 100px">
   <div class="cards-container">
+    <script>
+      const userInput = document.getElementById("query");
+      const submitButton = document.getElementById("")
+      userInput.addEventListener("click", (event) => {
+        <%= form_tag farms_path, method: :get do %>
+          <%= label_tag "Choisissez votre région" %>
+          <%= select_tag :query, options_for_select(Farm::REGIONS, params[:query]), class: "form-control" %>
+        <% end %>
+      });
+    </script>
+
     <div class="row">
       <% @farms.each do |farm| %>
         <div class="col-xs-12 col-sm-6">
@@ -20,8 +29,6 @@
               <p class="text-center"><%= farm.description %></p>
             </div>
           </div>
-
-
         </div>
       <% end %>
     </div>

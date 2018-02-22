@@ -1,12 +1,3 @@
-<%= form_tag farms_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Chercher par région"
-  %>
-<% end %>
-
-
 <div class="wrap">
   <h1 style="text-align: center; margin-top: 100px; margin-bottom: 30px;">Ma ferme</h1>
   <%= simple_form_for @farm do |f| %>
@@ -18,6 +9,7 @@
             <%= f.input :name, label: "Nom" %>
             <%= f.input :address, label: "Adresse" %>
             <%= f.input :city, label: "Ville" %>
+            <%= f.input :region, label: "Region", collection: Farm::REGIONS %>
             <%= f.input :description, label: "Description" %>
             <label for="">Types d'élevage (plusieurs choix possibles)</label>
             <div class="categories">
