@@ -17,8 +17,10 @@ class FarmsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @farm = Farm.find(params[:id])
     authorize @farm
+    authorize @booking
   end
 
   def new

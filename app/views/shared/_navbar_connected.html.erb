@@ -4,11 +4,8 @@
     <div class="add-farm">
       <%= link_to "Ajouter une ferme", new_farm_path, class: "navbar-menu-item" %>
     </div>
-    <div class="resa">
-      <%= link_to "Mes fermes", new_user_session_path, class: "navbar-menu-item"  %>
-    </div>
     <div class="msg">
-      <%= link_to "Mes réservations", new_user_session_path, class: "navbar-menu-item"  %>
+      <%= link_to "Mes réservations", profile_path(current_user), class: "navbar-menu-item"  %>
     </div>
     <div class="navbar-menu-item-dropdown">
       <div class="dropdown">

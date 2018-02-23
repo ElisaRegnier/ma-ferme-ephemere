@@ -10,30 +10,24 @@
   align-items: stretch;
   justify-content: space-around;
 }
-
-
 .farm-info {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 35px;
+  width: 60%;
 }
-
 .reservation {
-  width: 400px;
+  width: 40%;
   height: 100vh;
   position: sticky !important;
   top: 0px !important;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  padding: 35px;
+  padding-top: 100px;
 }
-
-
-
-
-
-
 
 .pres-show-farm {
   display: flex;
@@ -41,15 +35,6 @@
   justify-content: center;
   align-items: center;
 }
-
-
-
-
-
-
-
-
-
 
 
 

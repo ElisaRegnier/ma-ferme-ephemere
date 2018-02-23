@@ -4,10 +4,6 @@
   <p><%= @farm.city %></p>
 </div>
 
-
-
-
-
 <div class="farm-show-layout">
   <div class="farm-info">
     <div class="pres-show-farm">
@@ -21,51 +17,26 @@
     <div class="description-farm-show">
       <p><%= @farm.description %></p>
     </div>
+  </div>
+
+  <div class="reservation">
     <div>
       <p>Informations complémentaires :</p>
-      <ul>
         <li>Superficie de notre ferme : <%= @farm.size %>m2</li>
         <li>Contactez nous : <%= @farm.user.email %></li>
-      </ul>
+        </br>
     </div>
-  </div>
-  <div class="reservation">
-    <div class="reservation">
-      <%= link_to "Réserver", new_farm_booking_path(@farm), class: "button-very-green"%>
-    </div>
+
+    <%= simple_form_for [@farm, @booking] do |f| %>
+      <div class="form-content">
+
+        <div class="form-inputs" >
+          <%= f.input :start_time %>
+          <%= f.input :end_time %>
+          <%= f.input :number_of_people %>
+          <%= f.button :submit,class: "button-very-green create-farm" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
-
-
-
-
-<!--
-
-
-  <div class="show-container">
-    <div class="description">
-      <div class="title-description">
-        <h2><%= @farm.name %></h2>
-      </div>
-      <div class="show-description">
-        <p><%= @farm.description %></p>
-      </div>
-      <div class="contact">
-        <p>Contactez nous: <%= @farm.user.email %></p>
-      </div>
-      <div class="show-links">
-        <%= link_to "Go back to farms", farms_path  %>
-
-        <% if policy(@farm).update? %>
-          <%= link_to 'Edit', edit_farm_path(@farm) %>
-        <% end %>
-
-        <% if policy(@farm).destroy? %>
-          <%= link_to 'Delete', @farm, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      </div>
-    </div>
-    <div class="reservation">
-      <%= link_to "Réserver", new_farm_booking_path(@farm), class: "button-very-green"%>
-    </div>
-  </div> -->
