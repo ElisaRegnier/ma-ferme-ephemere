@@ -42,10 +42,10 @@
               <div class="top-card" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('<%= cl_image_path farm.photo, crop: :fill %>');">
                 <div class="hidden-hover">
                   <h3><%= farm.city %></h3>
-                    <h5><%= farm.regions %></h5>
+                  <h5><%= farm.regions %></h5>
                 </div>
                 <div class="card-hover">
-                  <p><%= farm.description[0..50] %>...</p>
+                  <p><%= farm.description[0..320] %>...</p>
                 </div>
               </div>
               <div class="bottom-card">

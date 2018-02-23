@@ -8,16 +8,20 @@
           <div class="card-content">
             <%= image_tag @user.photo, class: "big-avatar-circle" %>
             <h4><%= @user.name %></h4>
-            <p>@user.age , @farm.city (à ajouter)</p>
+            <p><%= @user.age %> ans</p>
+            <p><%= @user.location %> </p>
+            <p>Membre depuis <%= @user.created_at %></p>
             <br>
-            <p>@user.description(à ajouter)</p>
-            <br>
-            <%= link_to "Mes fermes", farms_path, class: "button-very-green"%>
+            <% if current_user.farms.first.nil? %>
+              <%= link_to "Ajouter une ferme", new_farm_path , class: "button-very-green" %>
+            <% else %>
+              <%= link_to "Ma ferme", farm_path(current_user.farms.first), class: "button-very-green"%>
+            <% end %>
           </div>
         </div>
         <div class="card-profile kpi">
           <div class="card-content">
-            <p>kpi à mettre</p>
+            <p><%= @user.about %></p>
           </div>
         </div>
       </div>
@@ -25,26 +29,67 @@
         <div class="card-profile description-profile">
           <h1>Réservations</h1>
 
-          <div class="tabs">
-            <a href="#" class="tab active">Mes demandes</a>
-            <a href="#" class="tab">Mes réservations</a>
-          </div>
-          <ul class="inbox">
-            <li class="message">
-              <%= image_tag @user.photo, class: "small-avatar-circle" %>
-              <div class="message-name">
-                <p><%= @user.name %></p>
-                <p><%= Time.now.strftime("%d/%m/%Y") %></p>
-              </div>
-              <div class="message-body">
-                <p>"Bonjour, nous souhaiterions venir passer 1 semaines dans votre ferme"</p>
-              </div>
-              <div class="message-status">
-                <p>Status</p>
-                <p>Pending</p>
-              </div>
-            </li>
-          </ul>
+
+          <% @user.bookings.each do |booking| %>
+
+            <ul class="inbox">
+              <li class="message">
+                <div class="photo-and-name">
+                  <%= image_tag booking.farm.user.photo, class: "small-avatar-circle" %>
+                  <br>
+                  <%= booking.farm.user.name %>
+                </div>
+
+                <div class="farm-name">
+                  <%= booking.farm.name %>
+                  <%= Time.now.strftime("%d/%m/%Y") %>
+                </div>
+
+                <div class="message-body">
+                  <%= booking.message %>
+                </div>
+                <div class="message-status">
+                  <p>Status</p>
+                  <% if policy(booking).create? %>
+                      <%= booking.accepted %>
+                    <% end %>
+                </div>
+              </li>
+            </ul>
+          <% end %>
+
+
+          <% @user.farms.each do |farm| %>
+            <ul class="inbox">
+              <% farm.bookings.each do |booking| %>
+                <li class="message">
+
+                  <div class="photo-and-name">
+                    <%= image_tag booking.user.photo, class: "small-avatar-circle" %>
+                    <%= booking.user.name %>
+                  </div>
+                  <div class="farm-name">
+                    <%= farm.name  %>
+                    <%= Time.now.strftime("%d/%m/%Y") %>
+                  </div>
+                  <div class="message-body">
+                    <%= booking.message %>
+                  </div>
+                  <div class="message-status">
+                    <% if booking.accepted == "En attente" %>
+                      <% if policy(farm).update? %>
+                        <%= link_to "Accepter", accept_path(booking) %>
+                        <%= link_to "Refuser", decline_path(booking) %>
+                      <% end %>
+                    <% else %>
+                      <%= booking.accepted %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
+
         </div>
       </div>
     </div>
