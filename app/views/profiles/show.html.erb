@@ -29,48 +29,61 @@
         <div class="card-profile description-profile">
           <h1>Réservations</h1>
 
-
           <ul class="inbox">
             <li class="message">
-              <div class="message-name">
-                <% @user.bookings.each do |booking| %>
+              <% @user.bookings.each do |booking| %>
+                <div class="photo-and-name">
                   <%= image_tag booking.farm.user.photo, class: "small-avatar-circle" %>
-                  <p><%= booking.farm.user.name %></p>
-                  <%= booking.farm.name %>
-                  <div class="message-body">
+                  <br>
+                  <%= booking.farm.user.name %>
+                </div>
 
-                    <p><%= booking.message %></p>
+                <div class="farm-name">
+                  <%= booking.farm.name %>
+                  <%= Time.now.strftime("%d/%m/%Y") %>
+                </div>
+
+                <div class="message-body">
+                  <%= booking.message %>
+                </div>
+                <div class="message-status">
+                  <p>Status</p>
+                  <% if policy(booking).create? %>
+                      <%= booking.accepted %>
+                    <% end %>
+                </div>
+              <% end %>
+
+
+              <% @user.farms.each do |farm| %>
+                <% farm.bookings.each do |booking| %>
+                  <div class="photo-and-name">
+                    <%= image_tag booking.user.photo, class: "small-avatar-circle" %>
+                    <%= booking.user.name %>
+                  </div>
+                  <div class="farm-name">
+                    <%= farm.name  %>
+                    <%= Time.now.strftime("%d/%m/%Y") %>
+                  </div>
+                  <div class="message-body">
+                    <%= booking.message %>
                   </div>
                   <div class="message-status">
-                    <p>Status</p>
-                    <p><% if policy(booking).create? %>
-                        <%= booking.accepted %>
-                      <% end %></p>
+                    <% if booking.accepted == "En attente" %>
+                      <% if policy(farm).update? %>
+                        <%= link_to "Accepter", accept_path(booking) %>
+                        <%= link_to "Refuser", decline_path(booking) %>
+                      <% end %>
+                    <% else %>
+                      <%= booking.accepted %>
+                    <% end %>
                   </div>
                 <% end %>
 
-
-                <% @user.farms.each do |farm| %>
-                  <%= image_tag farm.photo, class: "small-avatar-circle" %>
-                   <%= farm.name  %>
-                      <% farm.bookings.each do |booking| %>
-                      <%= booking.message %>
-                      <% if booking.accepted == "En attente" %>
-                          <% if policy(farm).update? %>
-                            <%= link_to "Accepter", accept_path(booking) %>
-                            <%= link_to "Refuser", decline_path(booking) %>
-                          <% end %>
-                        <% else %>
-                          <%= booking.accepted %>
-                        <% end %>
-                    <% end %>
-
-                  <% end %>
-
-
-              </div>
+              <% end %>
             </li>
           </ul>
+
         </div>
       </div>
     </div>
