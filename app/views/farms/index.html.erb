@@ -2,7 +2,13 @@
 <!-- Layout code for grid + map -->
 <% if @farms.empty? %>
   <div class="wrap">
-    <h1 style="text-align: center; margin-top: 150px; margin-bottom: 30px;">Essaye encore, il n'y a aucun résultat pour ta recherche...</h1>
+    <h1 style="text-align: center; margin-top: 150px; margin-bottom: 30px;">Essaye encore, il n'y a aucun résultat pour la recherche
+    <strong>
+    <% params[:query].each do |param| %>
+      "<%= param.to_s %>"
+    <% end %>
+    </strong>
+    </h1>
     <div class="container-padded">
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3">
@@ -10,7 +16,7 @@
             <%= form_tag farms_path, method: :get do %>
               <%= label_tag "Choisissez votre région" %>
               <%= select_tag "query[]", options_for_select(Farm::REGIONS, params[:query]), multiple: true, class: "form-control select2 hello" %>
-              <%= submit_tag "Valider", class: "edit_button button-very-green", id: "button-submit" %>
+              <%= submit_tag "Valider", class: "edit_button button-very-green", id: "button-submit", style: "margin-top:30px;" %>
             <% end %>
           </div>
         </div>
