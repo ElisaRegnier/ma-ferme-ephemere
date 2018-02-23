@@ -5,7 +5,6 @@ class User < ApplicationRecord
   # validates :photo, presence: true
   validates :name, presence: true
   validates :email, format: /@/
-  validates :password, length: 6..20
   validates :age, presence: true, allow_nil: true
   validates :location, presence: true, allow_nil: true
   validates :about, presence: true, allow_nil: true
