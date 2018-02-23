@@ -29,9 +29,10 @@
         <div class="card-profile description-profile">
           <h1>Réservations</h1>
 
-          <ul class="inbox">
 
-            <% @user.bookings.each do |booking| %>
+          <% @user.bookings.each do |booking| %>
+
+            <ul class="inbox">
               <li class="message">
                 <div class="photo-and-name">
                   <%= image_tag booking.farm.user.photo, class: "small-avatar-circle" %>
@@ -54,12 +55,15 @@
                     <% end %>
                 </div>
               </li>
-            <% end %>
+            </ul>
+          <% end %>
 
 
-            <% @user.farms.each do |farm| %>
-              <li>
-                <% farm.bookings.each do |booking| %>
+          <% @user.farms.each do |farm| %>
+            <ul class="inbox">
+              <% farm.bookings.each do |booking| %>
+                <li class="message">
+
                   <div class="photo-and-name">
                     <%= image_tag booking.user.photo, class: "small-avatar-circle" %>
                     <%= booking.user.name %>
@@ -82,9 +86,9 @@
                     <% end %>
                   </div>
                 <% end %>
-              <% end %>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          <% end %>
 
         </div>
       </div>
