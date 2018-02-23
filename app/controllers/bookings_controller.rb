@@ -38,7 +38,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new
+      redirect_to farm_path(@booking)
+      # render :new
     end
   end
 

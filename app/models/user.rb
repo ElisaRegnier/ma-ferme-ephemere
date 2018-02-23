@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :farms, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
-  validates :photo, presence: true
+  # validates :photo, presence: true
   validates :name, presence: true
   validates :email, format: /@/
   validates :password, length: 6..20

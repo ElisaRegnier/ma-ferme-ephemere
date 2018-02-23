@@ -1,62 +1,87 @@
-.banner-show-content {
+.banner-show {
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  // height: calc(60vh - 30px);
-  // background-size: cover !important;
-  // background-position: center;
-  padding: 50px;
-  h1 {
-    margin-bottom: 0;
-    font-size: 50px;
-    text-shadow: 0px 1px rgb(0, 0, 0);
-  }
-  p {
-    margin-bottom: 30px;
-  }
+}
+.farm-show-layout {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+}
+.farm-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  width: 60%;
+}
+.reservation {
+  width: 40%;
+  height: 100vh;
+  position: sticky !important;
+  top: 0px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px;
+  padding-top: 100px;
 }
 
-.show-container {
+.pres-show-farm {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 200px;
-  text-align: center;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
-.description {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  text-align: center;
-}
 
-.title-description {
-  text-align: center;
-  h2 {
-    font-size: 28px;
-  }
-}
 
-.show-description {
-  padding-top: 20px;
-  p {
-    font-size: 16px;
-  }
-}
 
-.reservation {
-  width: 20%;
-}
 
-.contact {
-  font-weight: bold;
-  border-top: 1px solid $green;
-  padding-top: 20px;
-}
+// .show-container {
+//   display: flex;
+//   justify-content: space-between;
+//   padding: 20px 200px;
+//   text-align: center;
+//   align-items: center;
+// }
 
-.show-links {
-  display: flex;
-  justify-content: space-between;
-  // padding: 20px 200px;
-  font-weight: bold;
-}
+// .description {
+//   display: flex;
+//   flex-direction: column;
+//   width: 60%;
+//   text-align: center;
+// }
+
+// .title-description {
+//   text-align: center;
+//   h2 {
+//     font-size: 28px;
+//   }
+// }
+
+// .show-description {
+//   padding-top: 20px;
+//   p {
+//     font-size: 16px;
+//   }
+// }
+
+// .reservation {
+//   width: 20%;
+// }
+
+// .contact {
+//   font-weight: bold;
+//   border-top: 1px solid $green;
+//   padding-top: 20px;
+// }
+
+// .show-links {
+//   display: flex;
+//   justify-content: space-between;
+//   // padding: 20px 200px;
+//   font-weight: bold;
+// }
