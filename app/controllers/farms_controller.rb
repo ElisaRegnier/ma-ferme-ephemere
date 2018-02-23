@@ -6,6 +6,8 @@ class FarmsController < ApplicationController
     @farms = policy_scope(Farm).order(created_at: :desc)
     authorize @farms
 
+    @farms = @farms.where(regions: params[:query]) if params[:query].present?
+
     @farms = @farms.where.not(latitude: nil, longitude: nil)
     @markers = @farms.map do |farm|
       {
@@ -61,6 +63,6 @@ class FarmsController < ApplicationController
   private
 
   def farms_params
-    params.require(:farm).permit(:name, :address, :zip_code, :city, :photo, :description, :ovin, :caprin, :bovin, :size, :region)
+    params.require(:farm).permit(:name, :address, :zip_code, :city, :photo, :description, :ovin, :caprin, :bovin, :size, :regions)
   end
 end
