@@ -30,8 +30,9 @@
           <h1>Réservations</h1>
 
           <ul class="inbox">
-            <li class="message">
-              <% @user.bookings.each do |booking| %>
+
+            <% @user.bookings.each do |booking| %>
+              <li class="message">
                 <div class="photo-and-name">
                   <%= image_tag booking.farm.user.photo, class: "small-avatar-circle" %>
                   <br>
@@ -52,10 +53,12 @@
                       <%= booking.accepted %>
                     <% end %>
                 </div>
-              <% end %>
+              </li>
+            <% end %>
 
 
-              <% @user.farms.each do |farm| %>
+            <% @user.farms.each do |farm| %>
+              <li>
                 <% farm.bookings.each do |booking| %>
                   <div class="photo-and-name">
                     <%= image_tag booking.user.photo, class: "small-avatar-circle" %>
@@ -79,7 +82,6 @@
                     <% end %>
                   </div>
                 <% end %>
-
               <% end %>
             </li>
           </ul>
