@@ -9,6 +9,8 @@
   position: fixed;
   width: 100%;
   border-bottom: 1px solid $light-green;
+  position: relative;
+  margin-bottom: 0;
 }
 
 .navbar-menu {
@@ -27,7 +29,7 @@
 }
 
 a.navbar-menu-item:hover {
-  border-bottom: 2px solid $green;
+  // border-bottom: 2px solid $green;
   padding-bottom: 22px;
 }
 
@@ -93,17 +95,23 @@ a {
 .logo {
   width: 40px;
   height: 40px;
-  margin-right: 600px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
 }
 
 .logo-2 {
   width: 40px;
   height: 40px;
-  margin-right: 600px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
 }
 
 .logo-3 {
   width: 40px;
   height: 40px;
-  margin-right: 600px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
 }
